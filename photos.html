@@ -1,0 +1,45 @@
+<script type='text/javascript' charset='utf-8'>
+    $(document).ready(function() {
+        $("#hz-progress").hide();
+        $("#hz-next").off('click');
+        $('#hz-next').prop('disabled', true);   
+        $("#hz-prev").off('click').on('click', function(){
+            $("#hz-progress").show();
+            $('#hz-next').prop('disabled', false); 
+            $("#swipetest").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#swipetest").append(pg_divs);
+            getPage(total_pages);
+        })
+    });
+</script>
+
+<div id="hz-caption" style="width: auto; height: 10%">
+    <h4 class="text-primary text-center">Photos</h4>
+</div>
+
+<div class="thumbs" style="overflow:scroll; width: auto; height: 75%; margin-top: 10px; margin-bottom: 10px"> 
+    <h6 class="text-primary text-center">Living Room</h6>
+    <a href="../css/images/beach1.jpg" style="background-image:url(../css/images/beach1.jpg)" title="Lion Rock"></a> 
+    <a href="../css/images/beach2.jpg" style="background-image:url(../css/images/beach2.jpg)" title="Holsten Gate"></a>
+    <a href="../css/images/beach3.jpg" style="background-image:url(../css/images/beach3.jpg)" title="Blue Hour"></a> 
+    <h6 class="text-primary text-center">Kitchen</h6>
+    <a href="../css/images/beach4.jpg" style="background-image:url(../css/images/beach4.jpg)" title="Lion Rock"></a> 
+    <a href="../css/images/beach5.jpg" style="background-image:url(../css/images/beach5.jpg)" title="Holsten Gate"></a>
+    <a href="../css/images/beach6.jpg" style="background-image:url(../css/images/beach6.jpg)" title="Blue Hour"></a>
+    <h6 class="text-primary text-center">Bed Room</h6>
+    <a href="../css/images/beach1.jpg" style="background-image:url(../css/images/beach1.jpg)" title="Lion Rock"></a> 
+    <a href="../css/images/beach2.jpg" style="background-image:url(../css/images/beach2.jpg)" title="Holsten Gate"></a>
+    <a href="../css/images/beach3.jpg" style="background-image:url(../css/images/beach3.jpg)" title="Blue Hour"></a> 
+</div>
+
+<script type='text/javascript' charset='utf-8'>
+
+$(document).ready(function() {
+    
+    // Initialize the gallery
+    $('.thumbs a').touchTouch();
+
+});
+
+</script>        
