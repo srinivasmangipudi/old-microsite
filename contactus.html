@@ -1,0 +1,40 @@
+<script type='text/javascript' charset='utf-8'>
+
+    $(document).ready(function() {
+
+        $('#pg_title').text("Interested?");
+
+        $('#pg_content').html('<div style="text-align:center;"><h4 style="font-size: 17px;">We would love to see you for a site visit, ' + lead_name + '!</h4><h4 style="font-size: 13px;"> Your data is confidential and we promise not to spam you ever !</h4><div id="contact_us" style="margin-top: 5px; margin-bottom: 5px;text-align:center"> <div class="form-element"><input type="email" required class="form-control" id="lead_email" placeholder="Enter Your Email" style="text-align:center;min-width: 100px"><br><input type="text" class="form-control" id="lead_phone" placeholder="Enter Your Phone Number" style="text-align:center;min-width: 100px"><br></div><button type="submit" id="save_lead_contact" class="btn btn-primary" style="max-width:100px;">Done !</button></div></div>');
+
+        $('#hz-next').prop('disabled', true);
+
+        if (lead_id.charAt(0) != '-')
+        {
+            document.getElementById('lead_phone').value = lead_id;  
+        }
+
+        $("#hz-prev").off('click').on('click', function(){
+            $('#hz-next').prop('disabled', false);
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs);   
+
+            $.get("tco.html", function (data) {
+                $("#property_content").append(data);
+            });
+        })
+
+        $("#save_lead_contact").off('click').on('click', function(){
+            saveLeadDetails();               
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs);
+            $('#nav_div').hide();
+            $.get("thankyou.html", function (data) {
+                $("#property_content").append(data);
+            });
+        });
+
+    });
+    
+</script>

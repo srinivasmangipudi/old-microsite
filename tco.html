@@ -1,0 +1,34 @@
+<script type='text/javascript' charset='utf-8'>
+
+    $(document).ready(function() {
+
+        $('#pg_title').text("Total Cost of Ownership");
+
+        $('#pg_content').html('<div style="text-align:center;"> <br><h3>2 BHK Apartments of various sizes<br><br>83 Lakhs onwards !!</h3><br> <h4> (including all charges, stamp duty, registration etc)</h4></div>');
+
+        $("#hz-next").off('click').on('click', function(){
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs);  
+                      
+            $.get("contactus.html", function (data) {
+                $("#property_content").append(data);
+            });
+        })
+
+        $("#hz-prev").off('click').on('click', function(){
+            $('#hz-next').prop('disabled', false);
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs);   
+
+            $.get("price_comparison.html", function (data) {
+                $("#property_content").append(data);
+            });
+        })
+    });
+    
+</script>
+
+
+

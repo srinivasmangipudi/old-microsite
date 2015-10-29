@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Springfields</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+        <!-- Custom styles for this template -->
+        <link href="css/springfields.css" rel="stylesheet">
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body style="background-color:#E66060;">
+
+        <div class="container" id="property_content">
+
+            <div style="text-align:center; font-family: 'Roboto', sans-serif;">
+                <!-- <h2 class="form-signin-heading">SPRINGFIELDS</h2> 
+                <p style="text-align:center; font-size:large;">
+                  2 BHK ready to occupy homes with OC
+                </p>-->
+            </div>
+
+            <div style="text-align:center; font-size:large; font-family: 'Roboto', sans-serif;">
+                <img src="images/img2.png" style="width:100%;height:auto; max-width:450px;">
+            </div>
+
+          
+            <div style="text-align:center; max-width:450px; align:middle; margin:auto;">
+              
+            </div>
+          
+
+            <form id="hz_submit" class="form-signin">
+                <span style="color:#FFEF00;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span style="color:#FFEF00;font-size: large;"> Exciting Diwali Offers !!</span>
+                <p style="font-size:xx-small;">&nbsp;</p>
+                <label for="lead_name" class="sr-only">Name</label>
+                <input type="text" id="lead_name" class="form-control" placeholder="Your Name" required>
+                <label for="lead_email" class="sr-only">Email address</label>
+                <input type="email" id="lead_email" class="form-control" placeholder="Email address" required autofocus>
+                <label for="lead_phone" class="sr-only">Mobile Number</label>
+                <input type="tel" id="lead_phone" class="form-control" placeholder="Phone Number" required>
+                <button class="btn btn-lg btn-default btn-block" type="submit">I'm Interested</button>
+            </form>
+
+        </div> <!-- /container -->
+
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+        <!-- jQuery -->
+        <script src="js/howzapp_short.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous">
+        </script>
+
+        <script type='text/javascript' charset='utf-8'>
+
+            $(document).ready(function() {
+                getUrlParameters();
+                updateVisitorCount();
+
+                $("#hz_submit").submit(function( event ) {
+                    addLeadDetails();    
+                    $.get("thankyou.html", function (data) {
+                        $("#property_content").empty();
+                        var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+                        $("#property_content").append(pg_divs);
+                        $("#property_content").append(data);
+                    });
+                    event.preventDefault();
+                });
+
+            });
+ 
+        </script>    
+    </body>
+</html>

@@ -1,14 +1,35 @@
+
+<link rel="stylesheet" href="css/touchTouch.css"/>
+<link rel="stylesheet" href="css/styles.css"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67848663-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 <script type='text/javascript' charset='utf-8'>
     $(document).ready(function() {
-        $("#hz-progress").hide();
-        $("#hz-next").off('click');
-        $('#hz-next').prop('disabled', true);   
+        //$("#hz-progress").hide();
+
+        $("#hz-next").off('click').on('click', function(){
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs);
+            $.get("location.html", function (data) {
+                $("#property_content").append(data);
+            });
+        })   
+
         $("#hz-prev").off('click').on('click', function(){
             $("#hz-progress").show();
-            $('#hz-next').prop('disabled', false); 
-            $("#swipetest").empty();
+            $("#property_content").empty();
             var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
-            $("#swipetest").append(pg_divs);
+            $("#property_content").append(pg_divs);
             getPage(total_pages);
         })
     });
@@ -19,18 +40,14 @@
 </div>
 
 <div class="thumbs" style="overflow:scroll; width: auto; height: 75%; margin-top: 10px; margin-bottom: 10px"> 
-    <h6 class="text-primary text-center">Living Room</h6>
-    <a href="../css/images/beach1.jpg" style="background-image:url(../css/images/beach1.jpg)" title="Lion Rock"></a> 
-    <a href="../css/images/beach2.jpg" style="background-image:url(../css/images/beach2.jpg)" title="Holsten Gate"></a>
-    <a href="../css/images/beach3.jpg" style="background-image:url(../css/images/beach3.jpg)" title="Blue Hour"></a> 
-    <h6 class="text-primary text-center">Kitchen</h6>
-    <a href="../css/images/beach4.jpg" style="background-image:url(../css/images/beach4.jpg)" title="Lion Rock"></a> 
-    <a href="../css/images/beach5.jpg" style="background-image:url(../css/images/beach5.jpg)" title="Holsten Gate"></a>
-    <a href="../css/images/beach6.jpg" style="background-image:url(../css/images/beach6.jpg)" title="Blue Hour"></a>
-    <h6 class="text-primary text-center">Bed Room</h6>
-    <a href="../css/images/beach1.jpg" style="background-image:url(../css/images/beach1.jpg)" title="Lion Rock"></a> 
-    <a href="../css/images/beach2.jpg" style="background-image:url(../css/images/beach2.jpg)" title="Holsten Gate"></a>
-    <a href="../css/images/beach3.jpg" style="background-image:url(../css/images/beach3.jpg)" title="Blue Hour"></a> 
+    <h6 class="text-primary text-center">Plan and Clubhouse</h6>
+    <a href="css/images/springfields_1.jpg" style="background-image:url(css/images/springfields_1.jpg)" title="Plan"></a> 
+    <a href="css/images/springfields_2.jpg" style="background-image:url(css/images/springfields_2.jpg)" title="3D Plan"></a>
+    <a href="css/images/springfields_3.jpg" style="background-image:url(css/images/springfields_3.jpg)" title="RoofTop AC Clubhouse"></a> 
+    <h6 class="text-primary text-center">Elevation</h6>
+    <a href="css/images/springfields_4.jpg" style="background-image:url(css/images/springfields_4.jpg)" title="Elevation 1"></a> 
+    <a href="css/images/springfields_5.jpg" style="background-image:url(css/images/springfields_5.jpg)" title="Elevation 2"></a>
+    <a href="css/images/springfields_6.jpg" style="background-image:url(css/images/springfields_6.jpg)" title="Elevation 3"></a>
 </div>
 
 <script type='text/javascript' charset='utf-8'>

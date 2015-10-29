@@ -1,0 +1,31 @@
+<script type='text/javascript' charset='utf-8'>
+
+    $(document).ready(function() {
+
+        $('#pg_title').text("Map Location");
+        $('#pg_content').html('<div style="text-align:center;"><img id="ad_img" src="css/images/location.jpg" style="width:100%; height:250px; max-width:300px;"></div>');
+
+        $("#hz-next").off('click').on('click', function(){
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs);  
+                      
+            $.get("price_comparison.html", function (data) {
+                $("#property_content").append(data);
+            });
+        })
+
+        $("#hz-prev").off('click').on('click', function(){
+            $("#property_content").empty();
+            var pg_divs = "<h3 id=\"pg_title\" class=\"text-primary text-center\"></h3><br><div id=\"pg_content\" class=\"col-xs-12 col-md-8 col-md-offset-2\"></div>";
+            $("#property_content").append(pg_divs); 
+
+            $.get("photos.html", function (data) {
+                $("#property_content").append(data);
+            });
+        })
+
+    });
+    
+</script>
+

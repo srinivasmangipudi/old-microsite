@@ -9,8 +9,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-67848663-1', 'auto');
-      ga('require', 'poc1');
+      ga('create', 'UA-67848663-2', 'auto');
       ga('send', 'pageview');
 
     </script>
@@ -21,66 +20,104 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Howzapp</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/swipetest.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="../css/touchTouch.css"/>
-    <link rel="stylesheet" href="../css/styles.css"/>
+    <title>Springfields</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+    <!-- <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet"> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+    <style media="screen" type="text/css">
+
+    .ui-icon-loading {
+        background:none !important;
+    }
+
+    </style>        
 </head>
 
-<body>
-
+<body style="background: white;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Springfields</a>
+        </div>
+    </nav>
     <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">&nbsp;</h3>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-md-8 col-md-offset-2">
-                <div class="progress" style="margin-top: 10px; margin-bottom: 10px;">
-                    <div id="hz-progress" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                    20%
+                 <div id="swipetest" background-color="white">
+                    <div id="property_content" style="display:none;border-radius: 25px; height: 300px; margin-top: 10px; margin-bottom: 10px; font-family:'Roboto',sans-serif" background-color="white">
+                        <!-- <img style="display:block; margin: 0 auto; margin-top: 150px;" src="../css/images/hz-loader.gif" id="hz_loading"/> -->
+                        <h3 id="pg_title" class="text-primary text-center"></h3><br>
+                        <div id="pg_content" class="col-xs-12 col-md-8 col-md-offset-2">
+                        </div>
                     </div>
-                </div>
-                <div id="swipetest" style="border: 1px solid #666666; border-radius: 25px; height: 450px; margin-top: 10px; margin-bottom: 10px;" background-color="white">
-                    <img style="display:block; margin: 0 auto; margin-top: 150px;" src="../css/images/hz-loader.gif" id="hz_loading"/>
-                    <h3 id="pg_title" class="text-primary text-center"></h3><br>
-                    <div id="pg_content" class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div id="ad_div" style="text-align:center;">
+                        <p><img id="ad_img" src="css/images/springfields_ad.jpg" style="width:100%; height:475px; max-width:500px;"><p>
                     </div>
-                    <div id="hz_popup" data-history="false" data-role="popup" data-transition="slidedown" class="ui-content" style="min-width:250px; border: 1px solid #666666; border-radius: 25px;">
+                    <div id="hz_popup" data-position-to="window" data-history="false" data-role="popup" data-dismissible="false" data-transition="slidedown" class="ui-content" style="min-width:300px; border: 1px solid #666666; border-radius: 15px;display:none;">
                     </div>
-                </div>
-                <div class="text-center" style="margin-top: 10px; margin-bottom: 10px;"> 
-                    <button id="hz-prev" type="button" class="btn btn-primary btn-lg" data-role="none" aria-label="Prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </button> 
+                   
+                    <div class="text-center" id="nav_div" style="display:none; margin-top: 10px; margin-bottom: 10px;"> 
+                        <button id="hz-prev" type="button" class="btn btn-primary btn-lg" data-role="none" aria-label="Prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </button> 
 
-                    <button id="hz-next" class="btn btn-primary btn-lg" data-role="none" aria-label="Next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </button>
+                        <button id="hz-next" class="btn btn-primary btn-lg" data-role="none" aria-label="Next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <!-- jQuery -->
-    <script src="../js/howzapp.js"></script>
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../js/jquery.cycle.all.js"></script>
+    <script src="js/howzapp.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
     <script type='text/javascript' charset='utf-8'>
 
         $(document).ready(function() {
-            getProjectInfo();
+            
+            showWelcomePopup();
+            /*
+            $('#enter_the_dragon').attr('disabled','disabled');
+
+            $('#lead_name').keyup(function() {
+                if($(this).val() != '')
+                {
+                   $('#enter_the_dragon').removeAttr('disabled');
+                   $('#enter_the_dragon').attr('style',"max-width:100px;background-color:#87ceeb;");
+                }
+                else 
+                {
+                    $('#enter_the_dragon').attr('disabled','disabled');
+                }
+            });
+            */
+            getUrlParameters();
+            getSurveyData();
+            updateVisitorCount();
+
+           /*  $("#enter_the_dragon").off('click').on('click', function(){
+               //$('#enter_name').hide();
+               //$('#hz_popup').show();
+               showSurveyPopup(1);               
+            }); */
+
         });
  
         $(document).delegate("#hz-yes", "click", function() {
             sessionStorage.setItem('show_photos', '1');
             $.get("photos.html", function (data) {
-                $("#swipetest").empty();
-                $("#swipetest").append(data);
+                $('#ad_div').hide();
+                $("#property_content").empty();
+                $("#property_content").append(data);
             });
             pages_visited += ",p";
 
@@ -89,9 +126,61 @@
             });
         });
 
+
+
     </script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/touchTouch.jquery.js"></script> 
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function preloadContent() {
+            var element1 = document.createElement("script");
+            element1.src = "http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js";
+            document.body.appendChild(element1);
+
+            var element2 = document.createElement("script");
+            element2.src = "js/touchTouch.jquery.js";
+            document.body.appendChild(element2);
+
+            $('#ad_div').append('<span style="font-family:\'Roboto\'; color:transparent;">t</span>');
+            $('#ad_div').append('<span style="font-family:\'Glyphicons Halflings\'; color:transparent;">t</span>');
+
+            if (document.images)
+            {
+                img1 = new Image();
+                img2 = new Image();
+                img3 = new Image();
+                img4 = new Image();
+                img5 = new Image();
+                img6 = new Image();
+                img7 = new Image();
+                img8 = new Image();
+                img9 = new Image();
+
+                img1.src = "css/images/springfields_1.jpg";
+                img2.src = "css/images/springfields_2.jpg";
+                img3.src = "css/images/springfields_3.jpg";
+                img4.src = "css/images/springfields_4.jpg";
+                img5.src = "css/images/springfields_5.jpg";
+                img6.src = "css/images/springfields_6.jpg";
+                img7.src = "css/images/springfields_photo.jpg";
+                img8.src = "css/images/location.jpg";
+                img9.src = "css/images/price_comparison.jpg";
+            }
+            $('<div>').load('photos.html').hide();
+            $('<div>').load('location.html').hide();
+            $('<div>').load('price_comparison.html').hide();
+            $('<div>').load('tco.html').hide();
+            $('<div>').load('contactus.html').hide();
+            $('<div>').load('thankyou.html').hide();
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", preloadContent, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", preloadContent);
+        else window.onload = preloadContent;
+    </script>    
 </body>
 
 </html>
